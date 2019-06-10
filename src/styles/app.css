@@ -1,0 +1,37 @@
+.board-container {
+  display: flex;
+  justify-content: center;
+}
+
+.board {
+  height: 600px;
+  width: 600px;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.board-frame {
+  position: absolute;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 14px;
+  border-color: white;
+  height: 600px;
+  width: 600px;
+  pointer-events: none;
+}
+
+.tile {
+  height: 172px;
+  width: 172px;  
+  background-color: white;
+  margin: 14px;
+}
+
+.piece {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
