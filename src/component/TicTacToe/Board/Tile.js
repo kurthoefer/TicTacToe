@@ -1,6 +1,6 @@
 import React from "react";
 
-function Tile(props) {
+const Tile = (props) => {
 
   const { location } = props
   // console.log('location: ', location)

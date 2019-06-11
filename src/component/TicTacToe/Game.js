@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import Board from "./Board/Board.js"
+import Title from "./Header/Title"
+import Feed from "./Header/Feed"
+import Board from "./Board/Board"
 import { updateWinTrackerHash } from "../util/ticTacToe"
 
 class Game extends Component {
@@ -47,10 +49,6 @@ class Game extends Component {
             roundsLeft: prevState.roundsLeft - 1
           }
         });
-        // this.setState({
-        //   locations: nextLocations,
-        //   winner: currentPlayer
-        // });
       } else {
         this.setState((prevState, props) => {
           return {
@@ -60,12 +58,6 @@ class Game extends Component {
             roundsLeft: prevState.roundsLeft - 1
           }
         });
-        // });
-        // this.setState({
-        //   locations: nextLocations,
-        //   winTrackerHash: updatedWinTrackerHash,
-        //   currentPlayer: nextPlayer
-        // });
       }
     }
   }
@@ -90,20 +82,13 @@ class Game extends Component {
   }
 
   render() {
-    const { locations, winner ,winTrackerHash } = this.state
-    console.log('winner: ', winner ) 
-    // console.log('win hash: ', winTrackerHash ) 
+    const { locations, winner ,currentPlayer } = this.state
+    // console.log('winner: ', winner ) 
     return (
       <div>
-        <div className={'title-wrapper'} onClick={this.clearBoard}>
-          <p className={'txt-title'}>
-            Play Tic Tac Toe
-          </p>
-          <p className={'txt-small'}>
-            (click to restart)
-          </p>
-        </div>
-        <Board locations={locations} takeTurn={this.takeTurn}/>
+        <Title clearBoard={this.clearBoard} />
+        <Feed winner={winner} currentPlayer={currentPlayer} />
+        <Board locations={locations} winner={winner} takeTurn={this.takeTurn} />
       </div>
     );
   }

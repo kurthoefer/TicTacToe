@@ -13,14 +13,14 @@ class Board extends Component {
 
   render() {
     const tiles = this.makeTiles.call(this);
-
+    const spacersClass = this.props.winner ? 'spacers spacers-winner' : 'spacers'
     return (
       // resizeable background
       <div className='board-wrapper'>
         <div className='board-frame'>
           {tiles}
         </div>
-        <div className='spacers'>
+        <div className={spacersClass}>
         </div>
       </div>
     );
