@@ -6,14 +6,14 @@ class Board extends Component {
     super(props);
   }
 
-  renderTilesHelper() {
+  makeTiles() {
     const { locations, takeTurn } = this.props
     return locations ? locations.map((location, i) => <Tile takeTurn={() => takeTurn(i)} location={location} key={`tile_${i}`}/>) : ''
   }
 
   render() {
     // console.log(this.state.locations)
-    const tiles = this.renderTilesHelper.call(this);
+    const tiles = this.makeTiles.call(this);
 
     return (
       // resizeable background
