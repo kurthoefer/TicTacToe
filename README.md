@@ -5,9 +5,9 @@
 ## Built With
 
 <p align="center">
-<img src="https://www.kisspng.com/png-react-javascript-responsive-web-design-github-angu-1080152/preview.html" height="100px">
-<img src="https://www.kisspng.com/png-webpack-npm-postcss-logo-javascript-2444256/preview.html" height="100px">
-<img src="https://www.kisspng.com/png-source-to-source-compiler-javascript-ecmascript-no-1541578/preview.html" height="100px">
+<img src="https://imgur.com/ym7w8Sy" height="100px">
+<img src="https://imgur.com/n2Omqrh" height="100px">
+<img src="https://imgur.com/18VY9GY" height="100px">
 </p>
 
 * React
