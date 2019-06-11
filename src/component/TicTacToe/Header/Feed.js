@@ -1,25 +1,22 @@
 import React from "react";
 
 const Feed = (props) => {
-  const { winner, currentPlayer } = props
+  const { winner, currentPlayer, roundsLeft } = props
+  let feedMessage = '';
   if (winner) {
-    return (
-      <div className='feed-wrapper'>
-        <div className='feed'>
-          {winner} wins!
-        </div>
-      </div>
-    );
+    feedMessage = `${winner} wins!`
+  } else if (roundsLeft === 0) {
+    feedMessage = `It's a draw!`
   } else {
-    return (
-      <div className='feed-wrapper'>
-        <div className='feed'>
-          Go player {currentPlayer}
-        </div>
-      </div>
-    );
+    feedMessage = `Go player ${currentPlayer}`
   }
-
+  return (
+    <div className='feed-wrapper'>
+      <div className='feed'>
+        {feedMessage}
+      </div>
+    </div>
+  );
 }
 
 export default Feed;

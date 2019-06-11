@@ -1,6 +1,6 @@
 import React from "react";
 
-const Feed = (props) => {
+const Title = (props) => {
   return (
     <div className={'title-wrapper'} onClick={props.clearBoard}>
       <p className={'txt-title'}>
@@ -14,4 +14,4 @@ const Feed = (props) => {
 }
 
 
-export default Feed;
+export default Title;

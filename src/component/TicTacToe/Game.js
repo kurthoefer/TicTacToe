@@ -34,6 +34,8 @@ class Game extends Component {
 
   takeTurn(key) {
     const { locations, winner, winTrackerHash, currentPlayer, boardSize } = this.state
+
+    // only update game state if the location has not been used, and there is no winner
     if (locations[key] === 0 && !winner) {
       const updatedWinTrackerHash = updateWinTrackerHash(key, winTrackerHash, currentPlayer, boardSize);
       const nextPlayer = currentPlayer === 'X' ? 'O' : 'X';
@@ -65,9 +67,10 @@ class Game extends Component {
   clearBoard() {
     const { locations, winTrackerHash } = this.state
 
-    // make arr of len 'rounds' with all values '0'
+    // populate locations array with 0's
     const clearedLocations = [...locations].fill(0);
 
+    // set all keys in hash table to 0
     const clearedWinTrackerHash = Object.assign({}, winTrackerHash)
     for (let key in clearedWinTrackerHash) {
       clearedWinTrackerHash[key] = 0;
@@ -82,12 +85,11 @@ class Game extends Component {
   }
 
   render() {
-    const { locations, winner ,currentPlayer } = this.state
-    // console.log('winner: ', winner ) 
+    const { locations, winner ,currentPlayer, roundsLeft } = this.state
     return (
       <div>
         <Title clearBoard={this.clearBoard} />
-        <Feed winner={winner} currentPlayer={currentPlayer} />
+        <Feed winner={winner} currentPlayer={currentPlayer} roundsLeft={roundsLeft}/>
         <Board locations={locations} winner={winner} takeTurn={this.takeTurn} />
       </div>
     );

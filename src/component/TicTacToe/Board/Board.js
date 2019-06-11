@@ -7,13 +7,14 @@ class Board extends Component {
   }
 
   makeTiles() {
-    const { locations, takeTurn } = this.props
-    return locations ? locations.map((location, i) => <Tile takeTurn={() => takeTurn(i)} location={location} key={`tile_${i}`}/>) : ''
+    const { locations, takeTurn } = this.props;
+    return locations ? locations.map((location, i) => <Tile takeTurn={() => takeTurn(i)} location={location} key={`tile_${i}`}/>) : '';
   }
 
   render() {
     const tiles = this.makeTiles.call(this);
-    const spacersClass = this.props.winner ? 'spacers spacers-winner' : 'spacers'
+    const spacersClass = this.props.winner ? 'spacers spacers-winner' : 'spacers';
+
     return (
       // resizeable background
       <div className='board-wrapper'>
