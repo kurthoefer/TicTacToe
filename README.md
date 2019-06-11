@@ -4,10 +4,10 @@
 
 ## Built With
 
-<p align="center">
-<img src="https://imgur.com/ym7w8Sy" height="100px">
-<img src="https://imgur.com/n2Omqrh" height="100px">
-<img src="https://imgur.com/18VY9GY" height="100px">
+<p>
+<img src="https://i.imgur.com/ym7w8Sy.png" height="100px">
+<img src="https://i.imgur.com/n2Omqrh.png" height="100px">
+<img src="https://i.imgur.com/18VY9GY.png" height="100px">
 </p>
 
 * React
