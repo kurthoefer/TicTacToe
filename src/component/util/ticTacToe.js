@@ -1,10 +1,7 @@
 export const updateWinTrackerHash = (key, winTrackerHash, currentPlayer, boardSize) => {
-
   // console.log('key: ', key)
-
   const updatedWinTrackerHash = Object.assign({}, winTrackerHash)
   const playerValue = currentPlayer === 'X' ? 1 : -1;
-
   const measureForWin = ( hashProperty, playerValue ) => {
     if (Math.abs(updatedWinTrackerHash[hashProperty] + playerValue) === boardSize) return true;
     return false;
@@ -31,6 +28,5 @@ export const updateWinTrackerHash = (key, winTrackerHash, currentPlayer, boardSi
   }
 
   return updatedWinTrackerHash
-  
 }
 

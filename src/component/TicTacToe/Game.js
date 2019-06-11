@@ -33,11 +33,11 @@ class Game extends Component {
   takeTurn(key) {
     const { locations, winner, winTrackerHash, currentPlayer, boardSize } = this.state
     if (locations[key] === 0 && !winner) {
-      let nextLocations = [...locations];
+      const updatedWinTrackerHash = updateWinTrackerHash(key, winTrackerHash, currentPlayer, boardSize);
+      const nextPlayer = currentPlayer === 'X' ? 'O' : 'X';
+      const nextLocations = [...locations];
       nextLocations[key] = currentPlayer;
-      let nextPlayer = currentPlayer === 'X' ? 'O' : 'X';
 
-      let updatedWinTrackerHash = updateWinTrackerHash(key, winTrackerHash, currentPlayer, boardSize);
 
       if (updatedWinTrackerHash === 'winner') {
         this.setState((prevState, props) => {
@@ -74,9 +74,9 @@ class Game extends Component {
     const { locations, winTrackerHash } = this.state
 
     // make arr of len 'rounds' with all values '0'
-    let clearedLocations = [...locations].fill(0);
+    const clearedLocations = [...locations].fill(0);
 
-    let clearedWinTrackerHash = Object.assign({}, winTrackerHash)
+    const clearedWinTrackerHash = Object.assign({}, winTrackerHash)
     for (let key in clearedWinTrackerHash) {
       clearedWinTrackerHash[key] = 0;
     }
@@ -92,7 +92,7 @@ class Game extends Component {
   render() {
     const { locations, winner ,winTrackerHash } = this.state
     console.log('winner: ', winner ) 
-    console.log('win hash: ', winTrackerHash ) 
+    // console.log('win hash: ', winTrackerHash ) 
     return (
       <div>
         <div className={'title-wrapper'} onClick={this.clearBoard}>

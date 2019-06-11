@@ -12,16 +12,15 @@ class Board extends Component {
   }
 
   render() {
-    // console.log(this.state.locations)
     const tiles = this.makeTiles.call(this);
 
     return (
       // resizeable background
-      <div className='board-container'>
+      <div className='board-wrapper'>
         <div className='board-frame'>
-        </div>
-        <div className='board'>
           {tiles}
+        </div>
+        <div className='spacers'>
         </div>
       </div>
     );

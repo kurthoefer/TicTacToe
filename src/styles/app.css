@@ -35,28 +35,26 @@ html *
 
 /****************-------Board-------****************/
 
-.board-container {
+.board-wrapper {
   display: flex;
   justify-content: center;
 }
 
-.board {
+.board-frame {
+  background-color: white;
   height: 600px;
   width: 600px;
-  background-color: black;
   display: flex;
   flex-wrap: wrap;
 }
 
-.board-frame {
+.spacers {
   position: absolute;
-  box-sizing: border-box;
-  border-style: solid;
-  border-width: 14px;
-  border-color: white;
-  height: 600px;
-  width: 600px;
-  pointer-events: none;
+  /* box-sizing: border-box; */
+  height: 572px;
+  width: 572px;
+  margin-top: 14px;
+  background-color: black;
 }
 
 .tile {
@@ -64,6 +62,7 @@ html *
   width: 172px;  
   background-color: white;
   margin: 14px;
+  z-index: 10;
 }
 
 .piece {
